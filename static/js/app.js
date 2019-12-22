@@ -1,4 +1,4 @@
-function getPlot(id) {
+function getPlots(id) {
 //Read samples.json
     d3.json("samples.json").then (sampledata =>{
         console.log(sampledata)
@@ -73,7 +73,7 @@ function getPlot(id) {
     });
 }  
 // create the function to get the necessary data
-function getInfo(id) {
+function getDemoInfo(id) {
 // read the json file to get data
     d3.json("samples.json").then((data)=> {
 // get the metadata info for the demographic panel
@@ -97,8 +97,8 @@ function getInfo(id) {
 }
 // create the function for the change event
 function optionChanged(id) {
-    getPlot(id);
-    getInfo(id);
+    getPlots(id);
+    getDemoInfo(id);
 }
 
 // create the function for the initial data rendering
@@ -116,8 +116,8 @@ function init() {
         });
 
         // call the functions to display the data and the plots to the page
-        getPlot(data.names[0]);
-        getInfo(data.names[0]);
+        getPlots(data.names[0]);
+        getDemoInfo(data.names[0]);
     });
 }
 
